@@ -1,0 +1,19 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+        <changeSet id="20210504161014-1" author="mkalenova">
+            <sql>
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (1, true, 2.6, 3.2, 'A1', 1.0);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (1, true, 3.2, 3.2, 'A2', 1.15);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (1, true, 4.6, 3.2, 'A3', 1.8);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (1, true, 5.5, 3.2, 'A4', 2.1);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (2, true, 6.1, 4.5, 'B1', 2.5);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (2, true, 7.5, 4.5, 'B2', 2.7);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (2, true, 8.1, 4.5, 'B3', 3.0);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (2, true, 9.6, 4.5, 'B4', 3.21);
+                INSERT INTO public.parking_lot (floor_number, is_available, nominal_weight, nominal_height, parking_location, prise_per_minute) VALUES (3, true, 10.2, 6.1, 'C1', 3.5);
+            </sql>
+        </changeSet>
+</databaseChangeLog>

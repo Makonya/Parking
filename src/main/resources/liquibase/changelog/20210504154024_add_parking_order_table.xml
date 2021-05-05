@@ -1,0 +1,35 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="20210504154024-1" author="mkalenova">
+        <createTable tableName="parking_order">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="parking_orderPK"/>
+            </column>
+            <column name="parking_lot_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_number" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="weight" type="numeric(19, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="height" type="numeric(19, 2)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="start_date" type="TIMESTAMP WITHOUT TIME ZONE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="end_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+        </createTable>
+    </changeSet>
+    <changeSet id="20210504154024-2" author="mkalenova">
+        <addForeignKeyConstraint baseTableName="parking_order" baseColumnNames="parking_lot_id"
+                                 constraintName="parking_order__parking_lot_idFK" referencedTableName="parking_lot"
+                                 deferrable="false" initiallyDeferred="false" validate="true"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>
